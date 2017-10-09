@@ -3,11 +3,12 @@
 namespace Src\Request\Welcome;
 
 use Src\Request;
+use Src\Request\Assignable;
 use Src\Request\Verifiable;
 
 class Hello extends Request
 {
-    use Verifiable;
+    use Verifiable, Assignable;
 
     private $name;
 

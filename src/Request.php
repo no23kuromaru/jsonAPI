@@ -2,10 +2,13 @@
 
 namespace Src;
 
+use Src\Contracts\Request\Assign;
 use Src\Contracts\Request\Verify;
 
-abstract class Request implements Verify
+abstract class Request implements Verify, Assign
 {
+    private $request;
+
     /**
      * Request constructor.
      *
@@ -13,7 +16,14 @@ abstract class Request implements Verify
      */
     public function __construct(array $request)
     {
-        $this->validate($request);
-        $this->assign($request);
+        $this->request = $request;
+    }
+
+    /**
+     * @return array
+     */
+    public function getRequest(): array
+    {
+        return $this->request;
     }
 }
