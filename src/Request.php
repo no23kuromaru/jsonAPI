@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Request;
+namespace Src;
 
 use Src\Contracts\Request\Verify;
 

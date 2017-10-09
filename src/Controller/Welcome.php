@@ -2,6 +2,7 @@
 
 namespace Src\Controller;
 
+use Src\Controller;
 use Src\Request\Welcome\Hello;
 
 class Welcome extends Controller

@@ -2,7 +2,7 @@
 
 namespace Src\Request\Welcome;
 
-use Src\Request\Request;
+use Src\Request;
 use Src\Request\Verifiable;
 
 class Hello extends Request
