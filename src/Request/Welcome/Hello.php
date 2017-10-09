@@ -3,15 +3,13 @@
 namespace Src\Request\Welcome;
 
 use Src\Request\Request;
+use Src\Request\Verifiable;
 
 class Hello extends Request
 {
-    protected $name;
+    use Verifiable;
 
-    public function validate(array $request)
-    {
-        return true;
-    }
+    private $name;
 
     /**
      * @return string

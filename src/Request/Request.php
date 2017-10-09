@@ -11,13 +11,4 @@ abstract class Request implements Verify
         $this->validate($request);
         $this->assign($request);
     }
-
-    private function assign(array $request)
-    {
-        foreach ($request as $key => $value) {
-            if (property_exists($this, $key)) {
-                $this->$key = $value;
-            }
-        }
-    }
 }
