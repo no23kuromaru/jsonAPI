@@ -11,6 +11,7 @@ class WelcomeTest extends TestCase
         $request = new \Src\Request\Welcome\Hello([
             'name' => $name,
         ]);
+        $request->validate($request->getRequest());
         $request->assign($request->getRequest());
 
         $controller = new \Src\Controller\Welcome();

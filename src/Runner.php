@@ -9,6 +9,7 @@ class Runner implements \JsonSerializable
     /**
      * call user request methods.
      *
+     * @throws \Src\Exception\ChunkException
      * @param array $userCall
      */
     public function actionCall(array $userCall): void
@@ -18,14 +19,13 @@ class Runner implements \JsonSerializable
                 // create request and controller
                 $request = $this->resolveRequest($class, $method, $params);
 
-                if (! $request->validate()) {
-                    throw new \RuntimeException();
-                }
+                // request validate and assign
+                $request->validate($request->getRequest());
                 $request->assign($request->getRequest());
 
                 $controller = $this->resolveController($class);
-
                 $result = call_user_func_array([$controller, $method], [$request]);
+
                 $this->setActionResult($class, $method, $result);
             }
         }

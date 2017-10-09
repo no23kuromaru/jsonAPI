@@ -8,6 +8,7 @@ trait Assignable
      * assign request to class
      *
      * @param array $request
+     * @throws \Src\Exception\AssignException
      */
     public function assign(array $request): void
     {

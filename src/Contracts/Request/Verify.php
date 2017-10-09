@@ -7,7 +7,9 @@ interface  Verify
     /**
      * validate for request params
      *
-     * @return mixed
+     * @param array $request
+     * @throws \Src\Exception\ValidateException
+     * @return bool
      */
-    public function validate(): bool;
+    public function validate(array $request): bool;
 }
