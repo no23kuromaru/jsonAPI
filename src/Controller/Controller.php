@@ -2,6 +2,6 @@
 
 namespace Src\Controller;
 
-class Controller
+abstract class Controller
 {
 }
