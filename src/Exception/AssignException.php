@@ -2,6 +2,8 @@
 
 namespace Src\Exception;
 
-class AssignException extends ChunkException {
+use Src\ChunkException;
 
+class AssignException extends ChunkException
+{
 }

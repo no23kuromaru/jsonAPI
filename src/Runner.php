@@ -9,7 +9,7 @@ class Runner implements \JsonSerializable
     /**
      * call user request methods.
      *
-     * @throws \Src\Exception\ChunkException
+     * @throws \Src\ChunkException
      * @param array $userCall
      */
     public function actionCall(array $userCall): void

@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Exception;
+namespace Src;
 
 class ChunkException extends \Exception
 {
