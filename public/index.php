@@ -13,5 +13,5 @@ $userCall = [
 $runner = new \Src\Runner\Runner();
 $runner->actionCall($userCall);
 
-echo json_encode($runner);
+echo json_encode($runner), PHP_EOL;
 
