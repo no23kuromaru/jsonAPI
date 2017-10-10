@@ -20,8 +20,8 @@ class Runner implements \JsonSerializable
                 $request = $this->resolveRequest($class, $method, $params);
 
                 // request validate and assign
-                $request->validate($request->getRequest());
-                $request->assign($request->getRequest());
+                $request->validate($request->getRequest(), $class, $method);
+                $request->assign($request->getRequest(), $class, $method);
 
                 $controller = $this->resolveController($class);
                 $result = call_user_func_array([$controller, $method], [$request]);

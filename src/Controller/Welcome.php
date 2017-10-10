@@ -3,8 +3,9 @@
 namespace Src\Controller;
 
 use Src\Controller;
-use Src\Request\Welcome\PrintBack;
 use Src\Request\Welcome\Hello;
+use Src\Request\Welcome\PrintBack;
+use Src\Request\Welcome\Validate;
 
 class Welcome extends Controller
 {
@@ -30,5 +31,16 @@ class Welcome extends Controller
         return [
             'msg' => 'Hello '.$requestHello->getName(),
         ];
+    }
+
+    /**
+     * validate json schema example
+     *
+     * @param \Src\Request\Welcome\Validate $requestValidate
+     * @return array
+     */
+    public function validate(Validate $requestValidate): array
+    {
+        return $requestValidate->getRequest();
     }
 }
